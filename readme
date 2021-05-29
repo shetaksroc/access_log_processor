@@ -1,0 +1,23 @@
+Supported program arguments:
+1. distinctPaths , Default value=30
+Represents the queried distinct path value which each user has visited
+
+2. strictSearch ,  Default value=false
+If you pass strictSearch=true then it represents that we need to apply strict search where the distinct paths visited by user = value given as argument.
+Otherwise it will apply the condition at least N distinct paths
+
+Build and run instruction:
+mvn clean package exec:java -Dexec.mainClass=com.example.logprocessor.MainApp -Dexec.cleanupDaemonThreads=false
+
+How to pass flags?
+mvn clean package exec:java -Dexec.mainClass=com.example.logprocessor.MainApp -Dexec.cleanupDaemonThreads=false -DstrictSearch=true
+mvn clean package exec:java -Dexec.mainClass=com.example.logprocessor.MainApp -Dexec.cleanupDaemonThreads=false -DstrictSearch=true -DdistinctPaths=20
+
+
+Todo
+1. Using loggers
+2. Define custom exceptions and handle specific exceptions internally
+2. Define constants and utils class.
+3. Parallel processing of file chunks
+4. Accepting access logs location as parameter
+5. Accepting output locations as parameter. Assumed /tmp/ directory for now
